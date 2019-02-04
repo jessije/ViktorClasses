@@ -15,8 +15,23 @@ public class LinkedList extends List {
 
     @Override
     public void remove(int a) {
+        if (first.value == a) {
+            first = first.next;
+            return; //means end of the method, so it wont go further
+        }
+            Element previous = first;
+            Element current = previous.next;
+            while (current!=null) {
 
-    }
+                if (current.value == a) {
+                    previous.next = current.next;
+                    break;
+                }
+                previous = current;
+                current = current.next;
+            }
+        }
+
 
     @Override
     public void print() {
@@ -27,20 +42,15 @@ public class LinkedList extends List {
         }
     }
     public static void main(String[] args) {
-
         List list = new LinkedList();
         list.add(1);
         list.add(2);
         list.print();
         list.add(5);
         list.print();
-
-        Arraylist arraylist = new Arraylist();
-        arraylist.add(1);
-        arraylist.add(2);
-        arraylist.add(3);
-        arraylist.print();
-
+        System.out.println();
+        list.remove(10);
+        list.print();
     }
 }
 
