@@ -49,7 +49,7 @@ public class LinkedList extends List {
         list.add(5);
         list.print();
         System.out.println();
-        list.remove(10);
+        list.remove(1);
         list.print();
     }
 }
