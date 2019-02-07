@@ -30,7 +30,6 @@ while(i.next!=null){
 }
 
     }
-
     public void swap(){
         Element1<T> i = first;
         Element1<T> j = i; //i.next
@@ -41,7 +40,6 @@ while(i.next!=null){
         T temp = j.value;
         i.value = j.value;
         j.value = temp;
-
     }
 
     public void remove(T a) {
