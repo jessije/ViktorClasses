@@ -2,12 +2,12 @@ package com.Feb1;
 
 public class Arraylist extends LinkedList {
 
-    int[] arr = new int[1000];
+    float[] arr = new float[1000];
     int lastIndex = 0;
-    int[] remove = new int[100];
+    float[] remove = new float[100];
 
     @Override
-    public void add(int a) {
+    public void add(float a) {
         arr[lastIndex] = a;
         lastIndex++;
     }

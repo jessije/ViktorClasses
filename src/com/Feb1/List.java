@@ -4,9 +4,9 @@ public abstract class List {
 
     private String name;
 
-    public abstract void add(int a);
+    public abstract void add(float a);
 
-    public abstract void remove(int a);
+    public abstract void remove(float a);
 
     public abstract void print();
 

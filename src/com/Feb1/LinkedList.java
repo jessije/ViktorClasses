@@ -6,7 +6,7 @@ public class LinkedList extends List {
     Element first;
 
     @Override
-    public void add(int a) {
+    public void add(float a) {
         Element element = new Element();
         element.value = a;
         element.next = first;
@@ -14,7 +14,7 @@ public class LinkedList extends List {
     }
 
     @Override
-    public void remove(int a) {
+    public void remove(float a) {
         if (first.value == a) {
             first = first.next;
             return; //means end of the method, so it wont go further
@@ -53,9 +53,8 @@ public class LinkedList extends List {
         list.print();
     }
 }
-
 class Element {
-    int value;
+    float value;
     Element next;
 
 }
