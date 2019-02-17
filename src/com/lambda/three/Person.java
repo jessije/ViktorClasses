@@ -12,7 +12,9 @@ public class Person  {
         this.name = name;
         this.gender = gender;
     }
-
+    public boolean isAdult() {
+        return age>18;
+    }
     public int getAge() {
         return age;
     }
