@@ -1,6 +1,5 @@
 package com.Summary.file;
 
-import com.Summary.PersonDataProvider;
 import com.Summary.data.Country;
 import com.Summary.data.Person;
 
@@ -10,16 +9,27 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FileBasedProvider implements PersonDataProvider {
     @Override
     public Collection<Person> findAll() {
-        return null;
+        return myPeople;
     }
 
     @Override
     public Collection<Person> search(String firstName, String lastName, Boolean eu, int minimumAge) {
-        return null;
+        Stream<Person> peopleStream = myPeople.stream();
+
+        if(firstName!=null)
+            peopleStream = peopleStream.filter(person -> person.getFirstName().equals(firstName));
+        if(lastName!=null)
+            peopleStream = peopleStream.filter(person -> person.getLastName().equals(lastName));
+        if(minimumAge>0)
+            peopleStream = peopleStream.filter(person -> person.getAge()>=minimumAge);
+        if(eu!=null)
+            peopleStream = peopleStream.filter(person -> person.getCountry().isEu() == eu.booleanValue());
+        return peopleStream.collect(Collectors.toList());
     }
 
     private Function<String, Person> mapToItem = (line) -> {
@@ -37,7 +47,10 @@ public class FileBasedProvider implements PersonDataProvider {
             throw new IOException("not implemented: "+e);
         }
     }
+    //group by Country, return a map , it has key and value relation,
+    //key will be country, value will be people, use groupby (collectors to map)
+    //search by Name
+    // get average age
 
-    //private Function<String, Person> mapToItem = (line) ->
 
 }

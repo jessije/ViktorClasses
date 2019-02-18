@@ -1,9 +1,5 @@
 package com.Stream.Eight;
-
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.util.Optional;
-import java.util.OptionalDouble;
 import java.util.stream.Stream;
 
 public class Example3 {

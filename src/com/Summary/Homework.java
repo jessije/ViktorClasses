@@ -40,12 +40,15 @@ public class Homework {
 //            Stream<String> streamList = people.stream();
 //            streamList.forEach(System.out::println);
 
-        } catch(FileNotFoundException fne){
+        } catch (FileNotFoundException fne) {
             System.out.println("file not found");
         } catch (IOException e) {
             e.printStackTrace();
             throw e;
-
+            //group by Country, return a map , it has key and value relation,
+                      //key will be country, value will be people, use groupby (collectors to map)
+            //search by Name
+            // get average
 
         }
     }
