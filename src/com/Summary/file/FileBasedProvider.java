@@ -47,6 +47,15 @@ public class FileBasedProvider implements PersonDataProvider {
             throw new IOException("not implemented: "+e);
         }
     }
+    private static grouping(){
+        Map<String, List<Person>> peopleByCountry = myPeople.stream().collect(Collectors.groupingBy(p->p.getCountry()));
+    }
+    private static Map<Person.Country, List<Person>> groupPeopleByCountry (List<Person>personList) {
+        return personList.stream()>collect(Collectors.groupingBy(Person::getCountry)); 
+    }
+    
+    10 example6 
+        
     //group by Country, return a map , it has key and value relation,
     //key will be country, value will be people, use groupby (collectors to map)
     //search by Name
